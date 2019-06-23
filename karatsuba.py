@@ -7,8 +7,14 @@ Created on Sun Jun 23 15:49:40 2019
 """
 
 def split(temp, pos):
-    temp = str(temp)
+    """
+    temp : integer
+    pos : index of middle
     
+    return : two splitted integer through midpoint
+    """
+    
+    temp = str(temp)
     return int(temp[:-pos]), int(temp[-pos:])
 
 def multiply(x,y):
@@ -23,7 +29,7 @@ def multiply(x,y):
 #    x = str(x)
 #    y = str(y)
     
-    if len(str(x)) == 1 or len(str(y)) == 1:
+    if len(str(x)) == 1 or len(str(y)) == 1:   #base case
         return x*y
 
     else:
@@ -61,5 +67,5 @@ print("By karatsuba method "+ d)
 c = str( a*b )
 print("By normal method " + c)
 
-print(c == d)
+print("Both result is same? "+ str(c==d))
     
