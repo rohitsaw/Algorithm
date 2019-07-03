@@ -49,6 +49,18 @@ def mergesort(arr):
     
     return merge(left, right)
     
-    
-    
-print(mergesort([2,6,8,13,1,3,3,5]))
+import time
+
+arr = []
+file = open("sample.txt","r")
+for word in file:
+    arr.append(int(word.strip()))
+file.close()
+
+start = time.time()
+arr = mergesort(arr)
+end = time.time()
+
+print("mergesort")
+print(end-start, len(arr))
+print("item at 5602 location "+str(arr[5602]))

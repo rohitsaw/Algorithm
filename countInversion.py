@@ -6,10 +6,10 @@ Created on Sun Jun 23 19:21:28 2019
 @author: rohit
 """
 
-# program to count total number of Inverse in array in O(nlogn) complexity
+# program to count total number of Inversion in array in O(nlogn) complexity
 # using divide and conquer technique
 
-arr = [2,6,8,1,9,3]  # here inverse is ((2,1),(6,1),(6,3),(8,1),(8,3),(9,3)) 
+#arr = [2,6,8,1,9,3]  # here inversion is ((2,1),(6,1),(6,3),(8,1),(8,3),(9,3)) 
                      # total no = 6
                      
                      
@@ -49,7 +49,7 @@ def mergeANDcount(left, right, inverse=0):
     
     return result, inverse
 #
-def countInverse(arr):
+def countInversion(arr):
 
     if len(arr) == 1:
         return arr, 0
@@ -57,10 +57,27 @@ def countInverse(arr):
     
     mid = len(arr)//2
     
-    left, leftcount = countInverse(arr[:mid])
-    right, rightcount = countInverse(arr[mid:])
+    left, leftcount = countInversion(arr[:mid])
+    right, rightcount = countInversion(arr[mid:])
 
     return mergeANDcount(left,right,leftcount+rightcount)
 #    
-print(countInverse(arr))
+  
+import time
+
+arr = []
+file = open("sample.txt","r")
+start = time.time()
+for word in file:
+    arr.append(int(word.strip()))
+file.close()
+
+print(len(arr))
+end = time.time()
+print(end-start)
     
+tic = time.time()
+print(countInversion(arr)[1])
+toc = time.time()
+
+print(toc-tic)
