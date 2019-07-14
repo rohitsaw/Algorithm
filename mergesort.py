@@ -6,8 +6,8 @@ Created on Sun Jun 23 19:21:28 2019
 @author: rohit
 """
 
-
 def merge(left, right):
+
     result = []
     i,j = 0,0
     
@@ -38,6 +38,7 @@ def merge(left, right):
     return result
 
 def mergesort(arr):
+    global count
     
     if len(arr) == 1:
         return arr
@@ -46,7 +47,7 @@ def mergesort(arr):
     
     left = mergesort(arr[:mid])
     right = mergesort(arr[mid:])
-    
+
     return merge(left, right)
     
 import time
@@ -63,4 +64,3 @@ end = time.time()
 
 print("mergesort")
 print(end-start, len(arr))
-print("item at 5602 location "+str(arr[5602]))
