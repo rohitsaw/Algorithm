@@ -1,0 +1,6 @@
+t   r v w
+w   v
+v   u
+r   s v
+u
+s
