@@ -1,3 +1,3 @@
-## This Repository contains the some basic Computer algorithms implemented in python by me
+## This Repository contains the some Algorithm like dijkstra,bfs,dfs etc, implemented in python for competitive programming
 
 
